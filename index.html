@@ -1,29 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R. David Parker</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 20px;
-            line-height: 1.6;
-        }
-        h1 { color: #1f4e79; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="R. David Parker, PhD, FACE — computational epidemiologist, data and AI leader, researcher, and founder of n61.">
+  <title>R. David Parker, PhD, FACE</title>
+  <style>
+    :root {
+      --paper: #f4f1e9;
+      --ink: #171714;
+      --muted: #69675f;
+      --line: #cbc6b9;
+      --accent: #315b52;
+      --card: rgba(255,255,255,.38);
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    a:hover { color: var(--accent); }
+    .wrap { width: min(calc(100% - 48px), var(--max)); margin: 0 auto; }
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 28px 0; border-bottom: 1px solid var(--line);
+      font-size: .88rem; letter-spacing: .02em;
+    }
+    .mark { font-weight: 750; letter-spacing: -.02em; text-decoration: none; }
+    .navlinks { display: flex; gap: 24px; flex-wrap: wrap; }
+    .navlinks a { text-decoration: none; color: var(--muted); }
+    .hero { padding: 112px 0 92px; border-bottom: 1px solid var(--line); }
+    .eyebrow { color: var(--accent); font-size: .8rem; font-weight: 750; text-transform: uppercase; letter-spacing: .13em; margin-bottom: 22px; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.4rem, 8vw, 7.6rem);
+      line-height: .92; letter-spacing: -.055em; font-weight: 500;
+      max-width: 1000px; margin-bottom: 36px;
+    }
+    .hero .lead { font-size: clamp(1.2rem, 2.2vw, 1.65rem); max-width: 780px; color: #3e3d38; margin-bottom: 34px; }
+    .hero .identity { font-size: 1rem; max-width: 760px; color: var(--muted); }
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line); }
+    .metric { padding: 36px 24px 38px 0; border-right: 1px solid var(--line); }
+    .metric:not(:first-child) { padding-left: 28px; }
+    .metric:last-child { border-right: 0; }
+    .metric strong { display: block; font-family: Georgia, "Times New Roman", serif; font-size: 2.25rem; font-weight: 500; letter-spacing: -.035em; }
+    .metric span { color: var(--muted); font-size: .86rem; }
+    section { padding: 88px 0; border-bottom: 1px solid var(--line); }
+    .section-grid { display: grid; grid-template-columns: 240px 1fr; gap: 64px; }
+    .section-label { font-size: .78rem; text-transform: uppercase; letter-spacing: .13em; font-weight: 750; color: var(--accent); }
+    h2 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem, 4vw, 3.35rem); line-height: 1.05; letter-spacing: -.035em; font-weight: 500; margin-bottom: 28px; }
+    .intro { max-width: 760px; font-size: 1.12rem; color: #41403a; }
+    .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 42px; }
+    .work-card { padding: 28px; border: 1px solid var(--line); background: var(--card); min-height: 230px; display: flex; flex-direction: column; }
+    .work-card.wide { grid-column: 1 / -1; min-height: 190px; }
+    .work-card .kicker { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 30px; }
+    .work-card h3 { font-family: Georgia, "Times New Roman", serif; font-size: 1.85rem; font-weight: 500; letter-spacing: -.025em; margin-bottom: 12px; }
+    .work-card p { color: var(--muted); max-width: 650px; }
+    .work-card a { margin-top: auto; font-size: .88rem; font-weight: 650; }
+    .research-copy { max-width: 760px; }
+    .research-copy p { font-size: 1.08rem; color: #41403a; }
+    .principle { margin-top: 38px; padding-left: 22px; border-left: 3px solid var(--accent); font-family: Georgia, "Times New Roman", serif; font-size: 1.45rem; line-height: 1.35; max-width: 700px; }
+    .contact { padding-bottom: 110px; }
+    .contact-links { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 34px; font-weight: 650; }
+    footer { padding: 28px 0 42px; display: flex; justify-content: space-between; gap: 24px; color: var(--muted); font-size: .82rem; }
+    @media (max-width: 780px) {
+      .wrap { width: min(calc(100% - 32px), var(--max)); }
+      nav { align-items: flex-start; gap: 24px; }
+      .navlinks { gap: 14px; justify-content: flex-end; }
+      .hero { padding: 76px 0 64px; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      .metric:nth-child(2) { border-right: 0; }
+      .metric:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .metric:nth-child(3) { padding-left: 0; }
+      .section-grid { grid-template-columns: 1fr; gap: 24px; }
+      section { padding: 64px 0; }
+      .work-grid { grid-template-columns: 1fr; }
+      .work-card.wide { grid-column: auto; }
+    }
+    @media (max-width: 480px) {
+      nav { display: block; }
+      .navlinks { margin-top: 18px; justify-content: flex-start; }
+      h1 { font-size: 3.35rem; }
+      .metrics { grid-template-columns: 1fr; }
+      .metric, .metric:not(:first-child), .metric:nth-child(3) { padding: 24px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .metric:last-child { border-bottom: 0; }
+    }
+  </style>
 </head>
 <body>
+  <div class="wrap">
+    <nav aria-label="Primary navigation">
+      <a class="mark" href="#top">R. David Parker</a>
+      <div class="navlinks">
+        <a href="#work">Work</a>
+        <a href="#research">Research</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
 
-<h1>R. David Parker, PhD</h1>
+    <main id="top">
+      <header class="hero">
+        <div class="eyebrow">R. David Parker, PhD, FACE</div>
+        <h1>I build systems that turn complex data into useful decisions.</h1>
+        <p class="lead">My work sits at the intersection of data, technology, research, and organizational decision-making.</p>
+        <p class="identity">Computational epidemiologist, data and AI leader, researcher, and founder of n61. Based in Anchorage, Alaska.</p>
+      </header>
 
-<p>Epidemiologist • Data & AI Executive • Researcher</p>
+      <div class="metrics" aria-label="Career highlights">
+        <div class="metric"><strong>20+</strong><span>years in applied research</span></div>
+        <div class="metric"><strong>100+</strong><span>scholarly &amp; technical publications</span></div>
+        <div class="metric"><strong>42</strong><span>peer-reviewed publications</span></div>
+        <div class="metric"><strong>$30M+</strong><span>funded research</span></div>
+      </div>
 
-<p>This website is under construction.</p>
+      <section id="work">
+        <div class="section-grid">
+          <div class="section-label">Selected work</div>
+          <div>
+            <h2>Building tools for questions where the answer matters.</h2>
+            <p class="intro">My current work through n61 focuses on practical AI products built around evidence, privacy, provenance, and human judgment.</p>
+            <div class="work-grid">
+              <article class="work-card">
+                <div class="kicker">n61 · Evidence synthesis</div>
+                <h3>SEEK2000</h3>
+                <p>A local-first evidence synthesis engine that retrieves relevant evidence, preserves provenance, synthesizes supported answers, and makes uncertainty explicit.</p>
+                <a href="https://n61.io" target="_blank" rel="noopener">Visit n61 →</a>
+              </article>
+              <article class="work-card">
+                <div class="kicker">n61 · Synthetic data</div>
+                <h3>SynthPop</h3>
+                <p>Privacy-preserving synthetic population generation for research, planning, modeling, and decision support.</p>
+                <a href="https://n61.io" target="_blank" rel="noopener">Visit n61 →</a>
+              </article>
+              <article class="work-card wide">
+                <div class="kicker">Data · Research · Organizations</div>
+                <h3>Data &amp; decision systems</h3>
+                <p>Two decades of work integrating fragmented data across research, clinical, and operational environments to support real-world decision-making.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<p>More content coming soon.</p>
+      <section id="research">
+        <div class="section-grid">
+          <div class="section-label">Research &amp; scholarship</div>
+          <div class="research-copy">
+            <h2>Research shaped the way I build.</h2>
+            <p>My background is in computational epidemiology and applied public health research. Across more than 100 scholarly and technical publications—including 42 peer-reviewed publications—my work has focused on extracting defensible conclusions from complex, imperfect data.</p>
+            <p>That same discipline now informs my work in data systems and AI: know where the evidence came from, distinguish what the data support from what they do not, and make uncertainty visible.</p>
+            <div class="principle">Evidence before inference. Human judgment remains essential.</div>
+          </div>
+        </div>
+      </section>
 
+      <section id="about">
+        <div class="section-grid">
+          <div class="section-label">About</div>
+          <div class="research-copy">
+            <h2>One career, viewed from different angles.</h2>
+            <p>I started as an epidemiologist asking questions about populations and health. Increasingly, those questions became problems of data: how information is collected, connected, analyzed, interpreted, and ultimately used to make decisions.</p>
+            <p>That thread has taken me through academic research, healthcare, enterprise analytics, organizational leadership, and now the development of evidence-bounded AI systems through n61.</p>
+            <p>I am a Fellow of the American College of Epidemiology and hold a PhD in Epidemiology with a cognate in Biostatistics.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="section-grid">
+          <div class="section-label">Contact</div>
+          <div>
+            <h2>Useful problems are usually worth a conversation.</h2>
+            <p class="intro">For research, data and AI work, collaboration, or n61 inquiries, get in touch.</p>
+            <div class="contact-links">
+              <a href="mailto:hello@n61.io">Email</a>
+              <a href="https://n61.io" target="_blank" rel="noopener">n61</a>
+              <a href="https://github.com/rdavidp" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 R. David Parker</span>
+      <span>Anchorage, Alaska</span>
+    </footer>
+  </div>
 </body>
 </html>
